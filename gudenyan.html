@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ぐでにゃん｜AIと究極のぐうたら検証中</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    /* フワッと出るアニメーションの魔法 */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fade-in {
+      animation: fadeInUp 0.8s ease-out forwards;
+    }
+    /* カードごとの時差表示用 */
+    .delay-100 { animation-delay: 0.1s; opacity: 0; }
+    .delay-200 { animation-delay: 0.2s; opacity: 0; }
+    .delay-300 { animation-delay: 0.3s; opacity: 0; }
+    .delay-400 { animation-delay: 0.4s; opacity: 0; }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans tracking-wide">
+
+  <nav class="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 shadow-sm">
+    <div class="max-w-4xl mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="#" class="font-bold text-xl tracking-tighter" onclick="renderHome()">🐱 ぐでにゃん</a>
+      <div class="text-xs md:text-sm font-medium text-gray-500">AI × ぐうたら検証中</div>
+    </div>
+  </nav>
+
+  <main id="app" class="pt-24 pb-16 min-h-screen max-w-4xl mx-auto px-6"></main>
+
+  <footer class="text-center py-8 text-sm text-gray-400">
+    &copy; 2026 Gude-Nyan Works. Generated with Gemini.
+  </footer>
+
+  <script>
+    // 🧠 サイトの脳みそ（全データ）
+    const CONTENT = {
+      hero: { 
+        title: "ぐでにゃん",
+        sub: "脳みそはGemini、わしは寝るだけ。<br>AIと創る『究極のぐうたら』検証中。",
+      },
+      skills: [
+        { 
+          id: "it", title: "IT Automation", tags: ["GAS", "AI連携", "自動化"], 
+          phrase: "完了やに！Geminiにコード書かせて、わしは寝るに。", 
+          color: "bg-cyan-100 text-cyan-800", delay: "delay-100",
+          detail: "3時間かかる退屈な事務作業やデータ入力を、Google Apps Script (GAS) とAIを組み合わせて5分で終わるように自動化するに。浮いた時間でゆっくり昼寝するのが目的やわ。"
+        },
+        { 
+          id: "hp", title: "Web Production", tags: ["HTML/CSS", "Vanilla JS", "AI実装"], 
+          phrase: "爆速やに！構成からデプロイまで、AIと作ったに。", 
+          color: "bg-amber-100 text-amber-800", delay: "delay-200",
+          detail: "「わしが寝とる間にサイト作っといて」を現実に。Geminiと壁打ちしながら、インストールすら不要の爆速・軽量な1ファイルサイトを錬成するに。レスポンシブも完璧やわ。"
+        },
+        { 
+          id: "ill", title: "AI Illustration", tags: ["Prompt", "世界観構築"], 
+          phrase: "描かせたに！プロンプト投げて、とろとろの世界を錬成。", 
+          color: "bg-pink-100 text-pink-800", delay: "delay-300",
+          detail: "絵の具は持たん。プロンプト（呪文）だけで、頭の中にある「ぐでぐでにとろけた世界観」をAIに描かせるに。アイコンから背景まで、一貫したサボりの美学を表現するわな。"
+        },
+        { 
+          id: "brand", title: "AI Branding", tags: ["壁打ち", "コンセプト", "メタ視点"], 
+          phrase: "整ったに。AI（Gemini）と相談して、最強のサボりをデザイン。", 
+          color: "bg-indigo-100 text-indigo-800", delay: "delay-400",
+          detail: "ただ作るだけやない。「いかに自分がラクして、でも有能に見せるか」というメタ視点のブランディングをAIと共に構築するに。このサイト自体がその壮大な実験なんやわ。"
+        }
+      ]
+    };
+
+    const app = document.getElementById('app');
+
+    // 🏠 トップページの描画
+    function renderHome() {
+      let html = `
+        <section class="py-10 md:py-20 text-center animate-fade-in">
+          <div class="w-32 h-32 mx-auto bg-gray-200 rounded-full mb-6 flex items-center justify-center overflow-hidden shadow-lg border-4 border-white">
+            <img src="./5074.jpg" alt="ぐでにゃん" class="w-full h-full object-cover">
+          </div>
+          <h1 class="text-4xl md:text-5xl font-extrabold mb-4">${CONTENT.hero.title}</h1>
+          <p class="text-md md:text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto">${CONTENT.hero.sub}</p>
+        </section>
+
+        <section class="py-10">
+          <h2 class="text-2xl font-bold mb-8 text-center text-gray-800">My Skills & Works</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      `;
+
+      CONTENT.skills.forEach(skill => {
+        html += `
+            <a href="#${skill.id}" onclick="renderDetail('${skill.id}')" class="block animate-fade-in ${skill.delay}">
+              <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all hover:-translate-y-1 cursor-pointer border border-gray-100 group h-full">
+                <h3 class="text-xl font-bold mb-3 group-hover:text-blue-600 transition-colors">${skill.title}</h3>
+                <p class="text-sm font-medium mb-4 text-gray-600">${skill.phrase}</p>
+                <div class="flex flex-wrap gap-2 mb-6">
+                  ${skill.tags.map(tag => `<span class="text-xs px-3 py-1 rounded-full ${skill.color}">${tag}</span>`).join('')}
+                </div>
+                <div class="flex items-center text-sm font-bold text-gray-400 group-hover:text-blue-600 transition-colors mt-auto">
+                  詳細を見る <i class="fa-solid fa-arrow-right ml-2"></i>
+                </div>
+              </div>
+            </a>
+        `;
+      });
+
+      html += `</div></section>`;
+      app.innerHTML = html;
+      window.scrollTo(0, 0);
+    }
+
+    // 📄 詳細ページの描画
+    function renderDetail(id) {
+      const skill = CONTENT.skills.find(s => s.id === id);
+      if (!skill) return;
+
+      let html = `
+        <div class="max-w-2xl mx-auto py-8 animate-fade-in">
+          <a href="#" onclick="renderHome()" class="inline-flex items-center text-sm font-bold text-gray-500 hover:text-gray-900 mb-8 transition-colors bg-white px-4 py-2 rounded-full shadow-sm">
+            <i class="fa-solid fa-arrow-left mr-2"></i> トップに戻るに
+          </a>
+          
+          <div class="bg-white p-8 md:p-10 rounded-3xl shadow-sm border border-gray-100">
+            <div class="flex flex-wrap gap-2 mb-6">
+              ${skill.tags.map(tag => `<span class="text-sm px-4 py-1.5 rounded-full font-medium ${skill.color}">${tag}</span>`).join('')}
+            </div>
+            <h1 class="text-3xl font-extrabold mb-4">${skill.title}</h1>
+            <p class="text-lg md:text-xl font-medium text-gray-500 mb-8 pb-8 border-b border-gray-100">
+              「${skill.phrase}」
+            </p>
+            <div class="text-gray-700 leading-loose text-md">
+              <p>${skill.detail}</p>
+            </div>
+          </div>
+        </div>
+      `;
+      app.innerHTML = html;
+      window.scrollTo(0, 0);
+    }
+
+    // 🚀 初期読み込み（URLのハッシュを見て判断）
+    window.addEventListener('load', () => {
+      const hash = window.location.hash.slice(1);
+      if (hash) {
+        renderDetail(hash);
+      } else {
+        renderHome();
+      }
+    });
+  </script>
+</body>
+</html>
