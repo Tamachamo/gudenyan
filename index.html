@@ -4,22 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ぐでにゃん｜AIに丸投げ×究極のぐうたら</title>
-  
   <link rel="icon" href="./5079.png">
-  
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
   <style>
-    /* フワッと出るアニメーションの魔法 */
     @keyframes fadeInUp {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
     }
-    .animate-fade-in {
-      animation: fadeInUp 0.8s ease-out forwards;
-    }
-    /* カードごとの時差表示用 */
+    .animate-fade-in { animation: fadeInUp 0.8s ease-out forwards; }
     .delay-100 { animation-delay: 0.1s; opacity: 0; }
     .delay-200 { animation-delay: 0.2s; opacity: 0; }
     .delay-300 { animation-delay: 0.3s; opacity: 0; }
@@ -45,7 +38,7 @@
   </footer>
 
   <script>
-    // 🧠 サイトの脳みそ（全データ）
+    // 🧠 サイトの脳みそ（ここに後から実績を足していくんやに！）
     const CONTENT = {
       hero: { 
         title: "ぐでにゃん",
@@ -54,34 +47,43 @@
       skills: [
         { 
           id: "it", title: "IT Automation", tags: ["GAS", "AI連携", "自動化"], 
-          phrase: "完了やに！Geminiにコード書かせて、わしは寝るに。", 
-          color: "bg-cyan-100 text-cyan-800", delay: "delay-100",
-          detail: "3時間かかる退屈な事務作業やデータ入力を、Google Apps Script (GAS) とAIを組み合わせて5分で終わるように自動化するに。浮いた時間でゆっくり昼寝するのが目的やわ。"
+          phrase: "完了やに！Geminiにコード書かせて、わしは寝るに。", color: "bg-cyan-100 text-cyan-800", delay: "delay-100",
+          detail: "3時間かかる退屈な事務作業やデータ入力を、Google Apps Script (GAS) とAIを組み合わせて5分で終わるように自動化するに。浮いた時間でゆっくり昼寝するのが目的やわ。",
+          works: [
+            { title: "Gmail×スプレッドシート自動連携（準備中）", desc: "お問い合わせメールを自動でスプレッドシートに転記し、AIが一次返信案を作成するシステムを近日デプロイ予定やに。", url: "", btnText: "待っとるに💤" }
+          ]
         },
         { 
           id: "hp", title: "Web Production", tags: ["HTML/CSS", "Vanilla JS", "AI実装"], 
-          phrase: "爆速やに！構成からデプロイまで、AIと作ったに。", 
-          color: "bg-amber-100 text-amber-800", delay: "delay-200",
-          detail: "「わしが寝とる間にサイト作っといて」を現実に。Geminiと壁打ちしながら、インストールすら不要の爆速・軽量な1ファイルサイトを錬成するに。レスポンシブも完璧やわ。"
+          phrase: "爆速やに！構成からデプロイまで、AIと作ったに。", color: "bg-amber-100 text-amber-800", delay: "delay-200",
+          detail: "「わしが寝とる間にサイト作っといて」を現実に。Geminiと壁打ちしながら、インストールすら不要の爆速・軽量な1ファイルサイトを錬成するに。レスポンシブも完璧やわ。",
+          works: [
+            { title: "ぐでにゃん 公式ポートフォリオ", desc: "まさに今見ているこのサイト。Geminiとの対話のみでコーディングし、1つのHTMLファイルでSPA（単一ページアプリケーション）の挙動を再現した実験作やわ。", url: "https://tamachamo.github.io/gudenyan/", btnText: "サイトを見る" },
+            { title: "ソースコード（GitHub）", desc: "このサイトの裏側。どんなコードになっとるか、すべて公開しとるに。", url: "https://github.com/tamachamo/gudenyan", btnText: "コードを見る" }
+          ]
         },
         { 
           id: "ill", title: "AI Illustration", tags: ["Prompt", "世界観構築"], 
-          phrase: "描かせたに！プロンプト投げて、とろとろの世界を錬成。", 
-          color: "bg-pink-100 text-pink-800", delay: "delay-300",
-          detail: "絵の具は持たん。プロンプト（呪文）だけで、頭の中にある「ぐでぐでにとろけた世界観」をAIに描かせるに。アイコンから背景まで、一貫したサボりの美学を表現するわな。"
+          phrase: "描かせたに！プロンプト投げて、とろとろの世界を錬成。", color: "bg-pink-100 text-pink-800", delay: "delay-300",
+          detail: "絵の具は持たん。プロンプト（呪文）だけで、頭の中にある「ぐでぐでにとろけた世界観」をAIに描かせるに。アイコンから背景まで、一貫したサボりの美学を表現するわな。",
+          works: [
+            { title: "公式アイコン『極限ぐうたら』", desc: "AIブロックに完全に寄りかかって寝ている姿を、視認性の高いベクター調で錬成。DALL-E 3等の画像生成AIへの緻密なプロンプト指示による成果物やに。", url: "./5079.png", btnText: "画像を見る" }
+          ]
         },
         { 
           id: "brand", title: "AI Branding", tags: ["壁打ち", "コンセプト", "メタ視点"], 
-          phrase: "整ったに。AI（Gemini）と相談して、最強のサボりをデザイン。", 
-          color: "bg-indigo-100 text-indigo-800", delay: "delay-400",
-          detail: "ただ作るだけやない。「いかに自分がラクして、でも有能に見せるか」というメタ視点のブランディングをAIと共に構築するに。このサイト自体がその『究極の丸投げ』の結晶なんやわ。"
+          phrase: "整ったに。AI（Gemini）と相談して、最強のサボりをデザイン。", color: "bg-indigo-100 text-indigo-800", delay: "delay-400",
+          detail: "ただ作るだけやない。「いかに自分がラクして、でも有能に見せるか」というメタ視点のブランディングをAIと共に構築するに。このサイト自体がその『究極の丸投げ』の結晶なんやわ。",
+          works: [
+            { title: "公式X（Twitter）アカウント", desc: "「AIに丸投げする有能な猫」というペルソナを設計。ギャップ萌えと技術力の高さを匂わせるブランディングを展開中やわ。", url: "https://x.com/Gudenyan_ai", btnText: "X（Twitter）を見る" }
+          ]
         }
       ]
     };
 
     const app = document.getElementById('app');
 
-    // 🏠 トップページの描画
+    // 🏠 トップページ
     function renderHome() {
       let html = `
         <section class="py-10 md:py-20 text-center animate-fade-in">
@@ -96,7 +98,6 @@
           <h2 class="text-2xl font-bold mb-8 text-center text-gray-800">My Skills & Works</h2>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
       `;
-
       CONTENT.skills.forEach(skill => {
         html += `
             <a href="#${skill.id}" onclick="renderDetail('${skill.id}')" class="block animate-fade-in ${skill.delay}">
@@ -113,16 +114,34 @@
             </a>
         `;
       });
-
       html += `</div></section>`;
       app.innerHTML = html;
       window.scrollTo(0, 0);
     }
 
-    // 📄 詳細ページの描画
+    // 📄 詳細ページ
     function renderDetail(id) {
       const skill = CONTENT.skills.find(s => s.id === id);
       if (!skill) return;
+
+      // 実績（Works）のHTMLを組み立てる
+      let worksHtml = '';
+      if (skill.works && skill.works.length > 0) {
+        worksHtml = `
+          <div class="mt-12 pt-8 border-t border-gray-100">
+            <h3 class="text-2xl font-bold mb-6 text-gray-800"><i class="fa-solid fa-star text-yellow-400 mr-2"></i>AIと錬成した実績</h3>
+            <div class="grid grid-cols-1 gap-4">
+              ${skill.works.map(work => `
+                <div class="bg-gray-50 rounded-2xl p-6 border border-gray-100 hover:shadow-md transition-shadow">
+                  <h4 class="text-lg font-bold mb-2">${work.title}</h4>
+                  <p class="text-sm text-gray-600 mb-4">${work.desc}</p>
+                  ${work.url ? `<a href="${work.url}" target="_blank" rel="noopener noreferrer" class="inline-block bg-gray-800 text-white font-bold text-sm px-5 py-2 rounded-full hover:bg-gray-700 transition-colors">${work.btnText}</a>` : `<span class="inline-block bg-gray-200 text-gray-500 font-bold text-sm px-5 py-2 rounded-full">${work.btnText}</span>`}
+                </div>
+              `).join('')}
+            </div>
+          </div>
+        `;
+      }
 
       let html = `
         <div class="max-w-2xl mx-auto py-8 animate-fade-in">
@@ -141,6 +160,7 @@
             <div class="text-gray-700 leading-loose text-md">
               <p>${skill.detail}</p>
             </div>
+            ${worksHtml}
           </div>
         </div>
       `;
@@ -148,14 +168,10 @@
       window.scrollTo(0, 0);
     }
 
-    // 🚀 初期読み込み（URLのハッシュを見て判断）
+    // 🚀 初期読み込み
     window.addEventListener('load', () => {
       const hash = window.location.hash.slice(1);
-      if (hash) {
-        renderDetail(hash);
-      } else {
-        renderHome();
-      }
+      if (hash) { renderDetail(hash); } else { renderHome(); }
     });
   </script>
 </body>
