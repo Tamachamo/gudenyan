@@ -43,7 +43,6 @@
   </footer>
 
   <script>
-    // 🧠 サイトの脳みそ
     const CONTENT = {
       hero: { 
         title: "ぐでにゃん",
@@ -51,12 +50,18 @@
       },
       skills: [
         { 
-          id: "it", title: "IT Automation", tags: ["GAS", "AI連携", "自動化"], 
+          id: "it", title: "IT Automation", tags: ["AppSheet", "GAS", "自動化"], 
           phrase: "完了やに！Geminiにコード書かせて、わしは寝るに。", color: "bg-cyan-100 text-cyan-800", delay: "delay-100",
           icon: "fa-solid fa-robot", iconColor: "text-cyan-500",
-          detail: "3時間かかる退屈な事務作業やデータ入力を、Google Apps Script (GAS) とAIを組み合わせて5分で終わるように自動化するに。浮いた時間でゆっくり昼寝するのが目的やわ。",
+          detail: "3時間かかる退屈な作業やデータ入力を、Googleのツール群（GAS/AppSheet/スプレッドシート）とAIを組み合わせて5分で終わるように自動化するに。浮いた時間でゆっくり昼寝するのが目的やわ。",
           works: [
-            { title: "Gmail×スプレッドシート自動連携（準備中）", desc: "お問い合わせメールを自動でスプレッドシートに転記し、AIが一次返信案を作成するシステムを近日デプロイ予定やに。", url: "", btnText: "待っとるに💤" }
+            // 👇 ここにAppSheetの最強実績を追加したに！
+            { 
+              title: "【実務案件】AppSheet×スプレッドシート 釣果更新システム", 
+              desc: "釣り船『豊楽丸』様のサイトにて、日々の釣果情報を爆速更新するシステムを構築。船長がスマホのAppSheetから入力したデータがスプレッドシートに保存され、そのまま自動でHPのトップページに連携・表示される仕組みやに。現場のITリテラシーに寄り添い、入力コストを極限まで下げた「最強のサボり（効率化）」の実装やわ。", 
+              url: "http://horakumaru.com/", 
+              btnText: "実際の釣果情報を見る" 
+            }
           ]
         },
         { 
@@ -70,7 +75,6 @@
             { 
               title: "【実務案件】釣り船『豊楽丸』様 サイト構築＆予約システム", 
               desc: "WordPressでのフルスクラッチ構築を担当。最大のキラーコンテンツである予約状況は、「船長がスマホのGoogleカレンダーに予定を入れるだけで、サイト上のFullCalendarに自動反映される」という現場の運用負担を極限まで減らしたシステムを設計・実装したに。実ビジネスのフローに寄り添ったガチ案件やわ。", 
-              // 👇 ここが複数ボタン対応の魔法やに！
               links: [
                 { url: "http://horakumaru.com/", text: "HPトップを見る" },
                 { url: "https://horakumaru.com/booking/", text: "予約システムを見る" }
@@ -148,10 +152,9 @@
       if (skill.works && skill.works.length > 0) {
         worksHtml = `
           <div class="mt-12 pt-8 border-t border-gray-100 relative z-10">
-            <h3 class="text-2xl font-bold mb-6 text-gray-800"><i class="fa-solid fa-star text-yellow-400 mr-2"></i>AIと錬成した実績</h3>
+            <h3 class="text-2xl font-bold mb-6 text-gray-800"><i class="fa-solid fa-star text-yellow-400 mr-2"></i>AIと錬成した実績（Works）</h3>
             <div class="grid grid-cols-1 gap-4">
               ${skill.works.map(work => {
-                // 👇 リンクが複数（links配列）ある場合と、1つ（url）だけの場合で出し分ける処理やに！
                 let buttonsHtml = '';
                 if (work.links) {
                   buttonsHtml = `<div class="flex flex-wrap gap-3 mt-2">` + 
