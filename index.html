@@ -3,7 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ぐでにゃん｜AIと究極のぐうたら検証中</title>
+  <title>ぐでにゃん｜AIに丸投げ×究極のぐうたら</title>
+  
+  <link rel="icon" href="./5079.png">
+  
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
@@ -27,15 +30,18 @@
 
   <nav class="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 shadow-sm">
     <div class="max-w-4xl mx-auto px-6 py-4 flex justify-between items-center">
-      <a href="#" class="font-bold text-xl tracking-tighter" onclick="renderHome()">🐱 ぐでにゃん</a>
-      <div class="text-xs md:text-sm font-medium text-gray-500">AI × ぐうたら検証中</div>
+      <a href="#" class="flex items-center font-bold text-xl tracking-tighter hover:opacity-80 transition-opacity" onclick="renderHome()">
+        <img src="./5079.png" alt="アイコン" class="w-8 h-8 rounded-md object-contain mr-2 border border-gray-200 bg-white">
+        ぐでにゃん
+      </a>
+      <div class="text-xs md:text-sm font-medium text-gray-500">AIに丸投げ × ぐうたら</div>
     </div>
   </nav>
 
   <main id="app" class="pt-24 pb-16 min-h-screen max-w-4xl mx-auto px-6"></main>
 
   <footer class="text-center py-8 text-sm text-gray-400">
-    &copy; 2026 Gude-Nyan Works. Generated with Gemini.
+    &copy; 2026 Gude-Nyan. Generated with Gemini.
   </footer>
 
   <script>
@@ -43,7 +49,7 @@
     const CONTENT = {
       hero: { 
         title: "ぐでにゃん",
-        sub: "脳みそはGemini、わしは寝るだけ。<br>AIと創る『究極のぐうたら』検証中。",
+        sub: "脳みそはGemini、わしは寝るだけ。<br>AIに全振りして『究極のぐうたら』を満喫中やに。",
       },
       skills: [
         { 
@@ -68,7 +74,7 @@
           id: "brand", title: "AI Branding", tags: ["壁打ち", "コンセプト", "メタ視点"], 
           phrase: "整ったに。AI（Gemini）と相談して、最強のサボりをデザイン。", 
           color: "bg-indigo-100 text-indigo-800", delay: "delay-400",
-          detail: "ただ作るだけやない。「いかに自分がラクして、でも有能に見せるか」というメタ視点のブランディングをAIと共に構築するに。このサイト自体がその壮大な実験なんやわ。"
+          detail: "ただ作るだけやない。「いかに自分がラクして、でも有能に見せるか」というメタ視点のブランディングをAIと共に構築するに。このサイト自体がその『究極の丸投げ』の結晶なんやわ。"
         }
       ]
     };
@@ -79,11 +85,11 @@
     function renderHome() {
       let html = `
         <section class="py-10 md:py-20 text-center animate-fade-in">
-          <div class="w-32 h-32 mx-auto bg-gray-200 rounded-full mb-6 flex items-center justify-center overflow-hidden shadow-lg border-4 border-white">
-            <img src="./5074.jpg" alt="ぐでにゃん" class="w-full h-full object-cover">
+          <div class="w-32 h-32 mx-auto bg-white rounded-2xl mb-6 flex items-center justify-center overflow-hidden shadow-lg border-2 border-gray-100 p-2">
+            <img src="./5079.png" alt="ぐでにゃん" class="w-full h-full object-contain">
           </div>
           <h1 class="text-4xl md:text-5xl font-extrabold mb-4">${CONTENT.hero.title}</h1>
-          <p class="text-md md:text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto">${CONTENT.hero.sub}</p>
+          <p class="text-md md:text-lg text-gray-600 leading-relaxed max-w-2xl mx-auto mt-4">${CONTENT.hero.sub}</p>
         </section>
 
         <section class="py-10">
@@ -94,7 +100,7 @@
       CONTENT.skills.forEach(skill => {
         html += `
             <a href="#${skill.id}" onclick="renderDetail('${skill.id}')" class="block animate-fade-in ${skill.delay}">
-              <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all hover:-translate-y-1 cursor-pointer border border-gray-100 group h-full">
+              <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all hover:-translate-y-1 cursor-pointer border border-gray-100 group h-full flex flex-col">
                 <h3 class="text-xl font-bold mb-3 group-hover:text-blue-600 transition-colors">${skill.title}</h3>
                 <p class="text-sm font-medium mb-4 text-gray-600">${skill.phrase}</p>
                 <div class="flex flex-wrap gap-2 mb-6">
@@ -120,7 +126,7 @@
 
       let html = `
         <div class="max-w-2xl mx-auto py-8 animate-fade-in">
-          <a href="#" onclick="renderHome()" class="inline-flex items-center text-sm font-bold text-gray-500 hover:text-gray-900 mb-8 transition-colors bg-white px-4 py-2 rounded-full shadow-sm">
+          <a href="#" onclick="renderHome()" class="inline-flex items-center text-sm font-bold text-gray-500 hover:text-gray-900 mb-8 transition-colors bg-white px-4 py-2 rounded-full shadow-sm border border-gray-100">
             <i class="fa-solid fa-arrow-left mr-2"></i> トップに戻るに
           </a>
           
