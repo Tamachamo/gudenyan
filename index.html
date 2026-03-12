@@ -8,14 +8,11 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    /* 全体のドット背景（画像を使わない爆速仕様） */
     body {
       background-color: #f9fafb;
       background-image: radial-gradient(#e5e7eb 1.5px, transparent 1.5px);
       background-size: 24px 24px;
     }
-    
-    /* フワッと出るアニメーション */
     @keyframes fadeInUp {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
@@ -46,7 +43,7 @@
   </footer>
 
   <script>
-    // 🧠 サイトの脳みそ（透かし用アイコンデータを追加！）
+    // 🧠 サイトの脳みそ
     const CONTENT = {
       hero: { 
         title: "ぐでにゃん",
@@ -56,7 +53,7 @@
         { 
           id: "it", title: "IT Automation", tags: ["GAS", "AI連携", "自動化"], 
           phrase: "完了やに！Geminiにコード書かせて、わしは寝るに。", color: "bg-cyan-100 text-cyan-800", delay: "delay-100",
-          icon: "fa-solid fa-robot", iconColor: "text-cyan-500", // 👈 ここにアイコン指定
+          icon: "fa-solid fa-robot", iconColor: "text-cyan-500",
           detail: "3時間かかる退屈な事務作業やデータ入力を、Google Apps Script (GAS) とAIを組み合わせて5分で終わるように自動化するに。浮いた時間でゆっくり昼寝するのが目的やわ。",
           works: [
             { title: "Gmail×スプレッドシート自動連携（準備中）", desc: "お問い合わせメールを自動でスプレッドシートに転記し、AIが一次返信案を作成するシステムを近日デプロイ予定やに。", url: "", btnText: "待っとるに💤" }
@@ -68,10 +65,18 @@
           icon: "fa-solid fa-code", iconColor: "text-amber-500",
           detail: "「わしが寝とる間にサイト作っといて」を現実に。Geminiと壁打ちしながら、インストールすら不要の爆速・軽量な1ファイルサイトを錬成するに。レスポンシブも完璧やわ。",
           works: [
-            { title: "ぐでにゃん 公式ポートフォリオ", desc: "まさに今見ているこのサイト。Geminiとの対話のみでコーディングし、1つのHTMLファイルでSPA（単一ページアプリケーション）の挙動を再現した実験作やわ。", url: "https://tamachamo.github.io/gudenyan/", btnText: "サイトを見る" },
-            { title: "ソースコード（GitHub）", desc: "このサイトの裏側。どんなコードになっとるか、すべて公開しとるに。", url: "https://github.com/tamachamo/gudenyan", btnText: "コードを見る" },
-{ title: "ブラウザ完結！ビンゴツール", desc: "インストール不要でサクッと遊べるWebビンゴマシーンを作ったに。これもGitHub Pagesで爆速デプロイ済やわ。", url: "https://tamachamo.github.io/bingo/", btnText: "ビンゴで遊ぶ" }
-
+            { title: "ぐでにゃん 公式ポートフォリオ", desc: "まさに今見ているこのサイト。Geminiとの対話のみでコーディングし、1つのHTMLファイルでSPAの挙動を再現した実験作やわ。", url: "https://tamachamo.github.io/gudenyan/", btnText: "サイトを見る" },
+            { title: "ブラウザ完結！ビンゴツール", desc: "インストール不要でサクッと遊べるWebビンゴマシーンを作ったに。これもGitHub Pagesで爆速デプロイ済やわ。", url: "https://tamachamo.github.io/bingo/", btnText: "ビンゴで遊ぶ" },
+            { 
+              title: "【実務案件】釣り船『豊楽丸』様 サイト構築＆予約システム", 
+              desc: "WordPressでのフルスクラッチ構築を担当。最大のキラーコンテンツである予約状況は、「船長がスマホのGoogleカレンダーに予定を入れるだけで、サイト上のFullCalendarに自動反映される」という現場の運用負担を極限まで減らしたシステムを設計・実装したに。実ビジネスのフローに寄り添ったガチ案件やわ。", 
+              // 👇 ここが複数ボタン対応の魔法やに！
+              links: [
+                { url: "http://horakumaru.com/", text: "HPトップを見る" },
+                { url: "https://horakumaru.com/booking/", text: "予約システムを見る" }
+              ]
+            },
+            { title: "ソースコード（GitHub）", desc: "このサイトの裏側。どんなコードになっとるか、すべて公開しとるに。", url: "https://github.com/tamachamo/gudenyan", btnText: "コードを見る" }
           ]
         },
         { 
@@ -97,7 +102,6 @@
 
     const app = document.getElementById('app');
 
-    // 🏠 トップページ
     function renderHome() {
       let html = `
         <section class="py-10 md:py-20 text-center animate-fade-in relative">
@@ -116,9 +120,7 @@
         html += `
             <a href="#${skill.id}" onclick="renderDetail('${skill.id}')" class="block animate-fade-in ${skill.delay}">
               <div class="bg-white p-8 rounded-2xl shadow-sm hover:shadow-xl transition-all hover:-translate-y-1 cursor-pointer border border-gray-100 group h-full flex flex-col relative overflow-hidden">
-                
                 <i class="${skill.icon} ${skill.iconColor} absolute -bottom-6 -right-6 text-9xl opacity-5 group-hover:opacity-10 group-hover:scale-110 transition-all duration-500 z-0 pointer-events-none"></i>
-                
                 <div class="relative z-10 flex flex-col h-full">
                   <h3 class="text-xl font-bold mb-3 group-hover:text-blue-600 transition-colors">${skill.title}</h3>
                   <p class="text-sm font-medium mb-4 text-gray-600">${skill.phrase}</p>
@@ -138,7 +140,6 @@
       window.scrollTo(0, 0);
     }
 
-    // 📄 詳細ページ
     function renderDetail(id) {
       const skill = CONTENT.skills.find(s => s.id === id);
       if (!skill) return;
@@ -149,15 +150,29 @@
           <div class="mt-12 pt-8 border-t border-gray-100 relative z-10">
             <h3 class="text-2xl font-bold mb-6 text-gray-800"><i class="fa-solid fa-star text-yellow-400 mr-2"></i>AIと錬成した実績</h3>
             <div class="grid grid-cols-1 gap-4">
-              ${skill.works.map(work => `
+              ${skill.works.map(work => {
+                // 👇 リンクが複数（links配列）ある場合と、1つ（url）だけの場合で出し分ける処理やに！
+                let buttonsHtml = '';
+                if (work.links) {
+                  buttonsHtml = `<div class="flex flex-wrap gap-3 mt-2">` + 
+                    work.links.map(link => `<a href="${link.url}" target="_blank" rel="noopener noreferrer" class="inline-block bg-gray-800 text-white font-bold text-sm px-5 py-2 rounded-full hover:bg-gray-700 transition-colors shadow-sm"><i class="fa-solid fa-arrow-up-right-from-square mr-1.5"></i>${link.text}</a>`).join('') + 
+                  `</div>`;
+                } else if (work.url) {
+                  buttonsHtml = `<div class="mt-2"><a href="${work.url}" target="_blank" rel="noopener noreferrer" class="inline-block bg-gray-800 text-white font-bold text-sm px-5 py-2 rounded-full hover:bg-gray-700 transition-colors shadow-sm"><i class="fa-solid fa-arrow-up-right-from-square mr-1.5"></i>${work.btnText}</a></div>`;
+                } else {
+                  buttonsHtml = `<div class="mt-2"><span class="inline-block bg-gray-100 text-gray-500 font-bold text-sm px-5 py-2 rounded-full">${work.btnText}</span></div>`;
+                }
+
+                return `
                 <div class="bg-white rounded-2xl p-6 border border-gray-100 hover:shadow-md transition-shadow relative overflow-hidden group">
                   <div class="relative z-10">
                     <h4 class="text-lg font-bold mb-2">${work.title}</h4>
-                    <p class="text-sm text-gray-600 mb-4">${work.desc}</p>
-                    ${work.url ? `<a href="${work.url}" target="_blank" rel="noopener noreferrer" class="inline-block bg-gray-800 text-white font-bold text-sm px-5 py-2 rounded-full hover:bg-gray-700 transition-colors shadow-sm">${work.btnText}</a>` : `<span class="inline-block bg-gray-100 text-gray-500 font-bold text-sm px-5 py-2 rounded-full">${work.btnText}</span>`}
+                    <p class="text-sm text-gray-600 mb-3">${work.desc}</p>
+                    ${buttonsHtml}
                   </div>
                 </div>
-              `).join('')}
+                `;
+              }).join('')}
             </div>
           </div>
         `;
@@ -192,7 +207,6 @@
       window.scrollTo(0, 0);
     }
 
-    // 🚀 初期読み込み
     window.addEventListener('load', () => {
       const hash = window.location.hash.slice(1);
       if (hash) { renderDetail(hash); } else { renderHome(); }
