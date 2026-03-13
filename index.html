@@ -55,23 +55,21 @@
           icon: "fa-solid fa-robot", iconColor: "text-cyan-500",
           detail: "3時間かかる退屈な作業やデータ入力を、Googleのツール群（GAS/AppSheet/スプレッドシート）とAIを組み合わせて5分で終わるように自動化するに。浮いた時間でゆっくり昼寝するのが目的やわ。",
           works: [
-            // 👇 ここにAppSheetの最強実績を追加したに！
             { 
               title: "【実務案件】AppSheet×スプレッドシート 釣果更新システム", 
               desc: "釣り船『豊楽丸』様のサイトにて、日々の釣果情報を更新するシステムを構築。船長がスマホのAppSheetから入力したデータがスプレッドシートに保存され、そのまま自動でHPのトップページに連携・表示される仕組みやに。現場のITリテラシーに寄り添い、入力コストを極限まで下げた「最強のサボり（効率化）」の実装やわ。", 
-              url: "http://horakumaru.com/", 
-              btnText: "実際の釣果情報を見る" 
+              url: "http://horakumaru.com/", btnText: "実際の釣果情報を見る" 
             }
           ]
         },
         { 
           id: "hp", title: "Web Production", tags: ["HTML/CSS", "Vanilla JS", "AI実装"], 
-          phrase: "爆速やに！構成からデプロイまで、AIと作ったに。", color: "bg-amber-100 text-amber-800", delay: "delay-200",
+          phrase: "構成からデプロイまで、AIと作ったに。", color: "bg-amber-100 text-amber-800", delay: "delay-200",
           icon: "fa-solid fa-code", iconColor: "text-amber-500",
-          detail: "「わしが寝とる間にサイト作っといて」を現実に。Geminiと壁打ちしながら、インストールすら不要の爆速・軽量な1ファイルサイトを錬成するに。レスポンシブも完璧やわ。",
+          detail: "「わしが寝とる間にサイト作っといて」を現実に。Geminiと壁打ちしながら、インストールすら不要の軽量な1ファイルサイトを錬成するに。レスポンシブも完璧やわ。",
           works: [
             { title: "ぐでにゃん 公式ポートフォリオ", desc: "まさに今見ているこのサイト。Geminiとの対話のみでコーディングし、1つのHTMLファイルでSPAの挙動を再現した実験作やわ。", url: "https://tamachamo.github.io/gudenyan/", btnText: "サイトを見る" },
-            { title: "ブラウザ完結！ビンゴツール", desc: "インストール不要でサクッと遊べるWebビンゴマシーンを作ったに。これもGitHub Pagesで爆速デプロイ済やわ。", url: "https://tamachamo.github.io/bingo/", btnText: "ビンゴで遊ぶ" },
+            { title: "ブラウザ完結！ビンゴツール", desc: "インストール不要でサクッと遊べるWebビンゴマシーンを作ったに。これもGitHub Pagesでデプロイ済やわ。", url: "https://tamachamo.github.io/bingo/", btnText: "ビンゴで遊ぶ" },
             { 
               title: "【実務案件】釣り船『豊楽丸』様 サイト構築＆予約システム", 
               desc: "WordPressでのフルスクラッチ構築を担当。最大のキラーコンテンツである予約状況は、「船長がスマホのGoogleカレンダーに予定を入れるだけで、サイト上のFullCalendarに自動反映される」という現場の運用負担を極限まで減らしたシステムを設計・実装したに。実ビジネスのフローに寄り添ったガチ案件やわ。", 
@@ -89,7 +87,17 @@
           icon: "fa-solid fa-palette", iconColor: "text-pink-500",
           detail: "絵の具は持たん。プロンプト（呪文）だけで、頭の中にある「ぐでぐでにとろけた世界観」をAIに描かせるに。アイコンから背景まで、一貫したサボりの美学を表現するわな。",
           works: [
-            { title: "公式アイコン『極限ぐうたら』", desc: "AIブロックに完全に寄りかかって寝ている姿を、視認性の高いベクター調で錬成。DALL-E 3等の画像生成AIへの緻密なプロンプト指示による成果物やに。", url: "./5079.png", btnText: "画像を見る" }
+            // 👇 ここに image: "画像パス" を追加したに！これで直接表示されるわな！
+            { 
+              title: "ぐでにゃん コンセプトアート", 
+              desc: "「効率化は、ぐうたらするためにあるに。」の哲学を体現したステッカー風イラスト。各種ITツールを背負いながらも爆睡する姿を錬成したわわ。", 
+              image: "./5093.png" 
+            },
+            { 
+              title: "公式アイコン『極限ぐうたら』", 
+              desc: "AIブロックに完全に寄りかかって寝ている姿を、視認性の高いベクター調で錬成。画像生成AIへの緻密なプロンプト指示による成果物やに。", 
+              image: "./5079.png" 
+            }
           ]
         },
         { 
@@ -153,24 +161,29 @@
         worksHtml = `
           <div class="mt-12 pt-8 border-t border-gray-100 relative z-10">
             <h3 class="text-2xl font-bold mb-6 text-gray-800"><i class="fa-solid fa-star text-yellow-400 mr-2"></i>AIと錬成した実績（Works）</h3>
-            <div class="grid grid-cols-1 gap-4">
+            <div class="grid grid-cols-1 gap-6">
               ${skill.works.map(work => {
                 let buttonsHtml = '';
                 if (work.links) {
-                  buttonsHtml = `<div class="flex flex-wrap gap-3 mt-2">` + 
+                  buttonsHtml = `<div class="flex flex-wrap gap-3 mt-4">` + 
                     work.links.map(link => `<a href="${link.url}" target="_blank" rel="noopener noreferrer" class="inline-block bg-gray-800 text-white font-bold text-sm px-5 py-2 rounded-full hover:bg-gray-700 transition-colors shadow-sm"><i class="fa-solid fa-arrow-up-right-from-square mr-1.5"></i>${link.text}</a>`).join('') + 
                   `</div>`;
                 } else if (work.url) {
-                  buttonsHtml = `<div class="mt-2"><a href="${work.url}" target="_blank" rel="noopener noreferrer" class="inline-block bg-gray-800 text-white font-bold text-sm px-5 py-2 rounded-full hover:bg-gray-700 transition-colors shadow-sm"><i class="fa-solid fa-arrow-up-right-from-square mr-1.5"></i>${work.btnText}</a></div>`;
-                } else {
-                  buttonsHtml = `<div class="mt-2"><span class="inline-block bg-gray-100 text-gray-500 font-bold text-sm px-5 py-2 rounded-full">${work.btnText}</span></div>`;
+                  buttonsHtml = `<div class="mt-4"><a href="${work.url}" target="_blank" rel="noopener noreferrer" class="inline-block bg-gray-800 text-white font-bold text-sm px-5 py-2 rounded-full hover:bg-gray-700 transition-colors shadow-sm"><i class="fa-solid fa-arrow-up-right-from-square mr-1.5"></i>${work.btnText}</a></div>`;
+                }
+
+                // 👇 ここが画像（image）がある場合にドカンと表示する魔法やに！
+                let imageHtml = '';
+                if (work.image) {
+                  imageHtml = `<div class="mb-4 bg-gray-50 rounded-xl overflow-hidden border border-gray-100 flex justify-center p-4"><img src="${work.image}" alt="${work.title}" class="max-h-64 object-contain"></div>`;
                 }
 
                 return `
                 <div class="bg-white rounded-2xl p-6 border border-gray-100 hover:shadow-md transition-shadow relative overflow-hidden group">
                   <div class="relative z-10">
-                    <h4 class="text-lg font-bold mb-2">${work.title}</h4>
-                    <p class="text-sm text-gray-600 mb-3">${work.desc}</p>
+                    <h4 class="text-lg font-bold mb-3">${work.title}</h4>
+                    ${imageHtml}
+                    <p class="text-sm text-gray-600 leading-relaxed">${work.desc}</p>
                     ${buttonsHtml}
                   </div>
                 </div>
