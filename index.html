@@ -8,11 +8,13 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
+    /* 全体のドット背景 */
     body {
       background-color: #f9fafb;
       background-image: radial-gradient(#e5e7eb 1.5px, transparent 1.5px);
       background-size: 24px 24px;
     }
+    /* フェードインアニメーション */
     @keyframes fadeInUp {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
@@ -57,58 +59,73 @@
           works: [
             { 
               title: "【実務案件】AppSheet×スプレッドシート 釣果更新システム", 
-              desc: "釣り船『豊楽丸』様のサイトにて、日々の釣果情報を爆速更新するシステムを構築。船長がスマホのAppSheetから入力したデータがスプレッドシートに保存され、そのまま自動でHPのトップページに連携・表示される仕組みやに。現場のITリテラシーに寄り添い、入力コストを極限まで下げた「最強のサボり（効率化）」の実装やわ。", 
+              desc: "船長がスマホのAppSheetから入力したデータがスプレッドシートに保存され、そのまま自動でHPのトップページに連携・表示される仕組みを構築。現場のITリテラシーに寄り添い、入力コストを極限まで下げた「有能なサボり」の実装やわ。", 
               url: "http://horakumaru.com/", btnText: "実際の釣果情報を見る" 
             }
           ]
         },
         { 
-          id: "hp", title: "Web Production", tags: ["HTML/CSS", "Vanilla JS", "AI実装"], 
-          phrase: "爆速やに！構成からデプロイまで、AIと作ったに。", color: "bg-amber-100 text-amber-800", delay: "delay-200",
+          id: "hp", title: "Web Application", tags: ["React", "WordPress", "API連携"], 
+          phrase: "爆速やに！最新のReactからガチのWP構築までお任せやわ。", color: "bg-amber-100 text-amber-800", delay: "delay-200",
           icon: "fa-solid fa-code", iconColor: "text-amber-500",
-          detail: "「わしが寝とる間にサイト作っといて」を現実に。Geminiと壁打ちしながら、インストールすら不要の爆速・軽量な1ファイルサイトを錬成するに。レスポンシブも完璧やわ。",
+          detail: "「わしが寝とる間にシステム作っといて」を現実に。実務案件のWordPressフルスクラッチから、Reactを用いた高速なWebアプリ開発まで、目的と予算に合わせた最適解を爆速で錬成するに。",
           works: [
-            { title: "ぐでにゃん 公式ポートフォリオ", desc: "まさに今見ているこのサイト。Geminiとの対話のみでコーディングし、1つのHTMLファイルでSPAの挙動を再現した実験作やわ。", url: "https://tamachamo.github.io/gudenyan/", btnText: "サイトを見る" },
-            { title: "ブラウザ完結！ビンゴツール", desc: "インストール不要でサクッと遊べるWebビンゴマシーンを作ったに。これもGitHub Pagesで爆速デプロイ済やわ。", url: "https://tamachamo.github.io/bingo/", btnText: "ビンゴで遊ぶ" },
+            { 
+              title: "React 部材在庫管理・棚卸しシステム", 
+              desc: "現場での入力性に特化したReact製フォーム。スプレッドシートへ蓄積されたデータをExcelの『データの取得』機能で同期し、Excel関数を用いて棚卸し表へ自動反映する運用フローを構築。Webと表計算ソフトの長所を組み合わせた実用的なDX事例やわ。", 
+              url: "https://sft-inventory.vercel.app/", btnText: "システムを見る" 
+            },
             { 
               title: "【実務案件】釣り船『豊楽丸』様 サイト構築＆予約システム", 
-              desc: "WordPressでのフルスクラッチ構築を担当。最大のキラーコンテンツである予約状況は、「船長がスマホのGoogleカレンダーに予定を入れるだけで、サイト上のFullCalendarに自動反映される」という現場の運用負担を極限まで減らしたシステムを設計・実装したに。実ビジネスのフローに寄り添ったガチ案件やわ。", 
+              desc: "WordPressでのフルスクラッチ構築を担当。「船長がスマホのカレンダーに予定を入れるだけで、サイト上のFullCalendarに自動反映される」という現場の運用負担を極限まで減らしたシステムを設計・実装したに。", 
               links: [
-                { url: "http://horakumaru.com/", text: "HPトップを見る" },
-                { url: "https://horakumaru.com/booking/", text: "予約システムを見る" }
+                { url: "http://horakumaru.com/", text: "HPトップ" },
+                { url: "https://horakumaru.com/booking/", text: "予約システム" }
               ]
             },
-            { title: "ソースコード（GitHub）", desc: "このサイトの裏側。どんなコードになっとるか、すべて公開しとるに。", url: "https://github.com/tamachamo/gudenyan", btnText: "コードを見る" }
+            { 
+              title: "ブラウザ完結！ビンゴツール", 
+              desc: "インストール不要でサクッと遊べるWebビンゴマシーン。手軽なツール開発のスピード感も得意やに。", 
+              url: "https://tamachamo.github.io/bingo/", btnText: "ビンゴで遊ぶ" 
+            },
+            { 
+              title: "ソースコード（GitHub）", 
+              desc: "このポートフォリオサイトの裏側。どんなコードになっとるか、すべて公開しとるに。", 
+              url: "https://github.com/tamachamo/gudenyan", btnText: "コードを見る" 
+            }
           ]
         },
         { 
-          id: "ill", title: "AI Illustration", tags: ["Prompt", "世界観構築"], 
-          phrase: "描かせたに！プロンプト投げて、とろとろの世界を錬成。", color: "bg-pink-100 text-pink-800", delay: "delay-300",
-          icon: "fa-solid fa-palette", iconColor: "text-pink-500",
-          detail: "絵の具は持たん。プロンプト（呪文）だけで、頭の中にある「ぐでぐでにとろけた世界観」をAIに描かせるに。アイコンから背景まで、一貫したサボりの美学を表現するわな。",
+          id: "ill", title: "Interactive Card & Art", tags: ["AI Illustration", "Digital Gift"], 
+          phrase: "心、動かすに。AIと技術で『動くメッセージ』を贈るわな。", color: "bg-pink-100 text-pink-800", delay: "delay-300",
+          icon: "fa-solid fa-gift", iconColor: "text-pink-500",
+          detail: "画像1枚で終わらない「体験」をデザインするに。AIで生成した唯一無二のアートに、最新のWeb技術で動きを加え、デジタルギフトや特別なメッセージカードとして昇華させるに。",
           works: [
             { 
+              title: "【新サービス構想】動くデジタルギフトカード", 
+              desc: "Reactアニメーション×AIイラスト。開いた瞬間に物語が始まる、次世代のメッセージカード。法人向けキャンペーンや、大切な人へのデジタルギフトに。詳細はメッセージで相談してな！"
+            },
+            { 
               title: "ぐでにゃん コンセプトアート", 
-              desc: "「効率化は、ぐうたらするためにあるに。」の哲学を体現したステッカー風イラスト。各種ITツールを背負いながらも爆睡する姿を錬成したわわ。", 
+              desc: "「効率化は、ぐうたらするためにあるに。」を体現したメインイラスト。", 
               image: "./5093.png" 
             },
             { 
               title: "公式アイコン『極限ぐうたら』", 
-              desc: "AIブロックに完全に寄りかかって寝ている姿を、視認性の高いベクター調で錬成。画像生成AIへの緻密なプロンプト指示による成果物やに。", 
+              desc: "AIブロックに完全に寄りかかって寝ている姿を、視認性の高いベクター調で錬成。", 
               image: "./5079.png" 
             }
           ]
         },
-        // 👇 ここがココナラ等に向けた「AI Branding」の最強テキストやに！
         { 
           id: "brand", title: "AI Branding", tags: ["壁打ち", "コンセプト", "メタ視点"], 
           phrase: "整ったに。AI（Gemini）と相談して、最強のサボりをデザイン。", color: "bg-indigo-100 text-indigo-800", delay: "delay-400",
           icon: "fa-solid fa-chess-knight", iconColor: "text-indigo-500",
-          detail: "ただ作るだけやない。「いかに自分がラクして、でも有能に見せるか」というメタ視点のブランディングをAIと共に構築するに。このサイト自体がその『究極の丸投げ』の結晶なんやわ。",
+          detail: "ただ作るだけやない。「いかに自分がラクして、でも有能に見せるか」というメタ視点のブランディングをAIと共に構築するに。お仕事のご依頼やご相談は、各プラットフォームのメッセージ機能からお気軽に声かけてな！",
           works: [
             { 
               title: "『ぐでにゃん』ペルソナ＆コンセプト設計", 
-              desc: "「AIに丸投げする有能な猫」というキャラクターを設計。表向きは極限までサボりつつ、裏ではゴリゴリの実務をこなすギャップ萌えのブランディングを構築したに。お仕事のご依頼やご相談は、閲覧中のプラットフォームのメッセージ機能からお気軽に声かけてな！"
+              desc: "「AIに丸投げする有能な猫」というキャラクターを設計。表向きはサボりつつ、裏ではゴリゴリの実務をこなすギャップ萌えのブランディングを構築。このサイト自体がその結晶やわ。"
             }
           ]
         }
@@ -117,6 +134,7 @@
 
     const app = document.getElementById('app');
 
+    // 🏠 トップページ描画
     function renderHome() {
       let html = `
         <section class="py-10 md:py-20 text-center animate-fade-in relative">
@@ -155,6 +173,7 @@
       window.scrollTo(0, 0);
     }
 
+    // 📄 詳細ページ描画
     function renderDetail(id) {
       const skill = CONTENT.skills.find(s => s.id === id);
       if (!skill) return;
@@ -163,7 +182,7 @@
       if (skill.works && skill.works.length > 0) {
         worksHtml = `
           <div class="mt-12 pt-8 border-t border-gray-100 relative z-10">
-            <h3 class="text-2xl font-bold mb-6 text-gray-800"><i class="fa-solid fa-star text-yellow-400 mr-2"></i>AIと錬成した実績（Works）</h3>
+            <h3 class="text-2xl font-bold mb-6 text-gray-800"><i class="fa-solid fa-star text-yellow-400 mr-2"></i>実績・提供サービス（Works）</h3>
             <div class="grid grid-cols-1 gap-6">
               ${skill.works.map(work => {
                 let buttonsHtml = '';
@@ -204,7 +223,6 @@
           
           <div class="bg-white p-8 md:p-10 rounded-3xl shadow-sm border border-gray-100 relative overflow-hidden">
             <i class="${skill.icon} ${skill.iconColor} absolute -top-10 -right-10 text-[12rem] opacity-5 z-0 pointer-events-none transform -rotate-12"></i>
-            
             <div class="relative z-10">
               <div class="flex flex-wrap gap-2 mb-6">
                 ${skill.tags.map(tag => `<span class="text-sm px-4 py-1.5 rounded-full font-medium ${skill.color}">${tag}</span>`).join('')}
@@ -225,6 +243,7 @@
       window.scrollTo(0, 0);
     }
 
+    // URLハッシュによる表示切り替え
     window.addEventListener('load', () => {
       const hash = window.location.hash.slice(1);
       if (hash) { renderDetail(hash); } else { renderHome(); }
