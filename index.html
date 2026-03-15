@@ -8,13 +8,11 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    /* 全体のドット背景 */
     body {
       background-color: #f9fafb;
       background-image: radial-gradient(#e5e7eb 1.5px, transparent 1.5px);
       background-size: 24px 24px;
     }
-    /* フェードインアニメーション */
     @keyframes fadeInUp {
       from { opacity: 0; transform: translateY(20px); }
       to { opacity: 1; transform: translateY(0); }
@@ -72,8 +70,9 @@
           works: [
             { 
               title: "React 部材在庫管理・棚卸しシステム", 
-              desc: "現場での入力性に特化したReact製フォーム。スプレッドシートへ蓄積されたデータをExcelの『データの取得』機能で同期し、Excel関数を用いて棚卸し表へ自動反映する運用フローを構築。Webと表計算ソフトの長所を組み合わせた実用的なDX事例やわ。", 
-              url: "https://sft-inventory.vercel.app/", btnText: "システムを見る" 
+              desc: "現場での入力性に特化したReact製フォーム。スプレッドシートへ蓄積されたデータをExcelの『データの取得』機能で同期し、棚卸し表へ自動反映する運用フローを構築。Webと表計算ソフトの長所を組み合わせた実用的なDX事例やわ。（※リンク先はポートフォリオ用のデモ版やに）", 
+              url: "https://sft-inventory-sample.vercel.app/", 
+              btnText: "デモシステムを見る" 
             },
             { 
               title: "【実務案件】釣り船『豊楽丸』様 サイト構築＆予約システム", 
@@ -96,14 +95,16 @@
           ]
         },
         { 
-          id: "ill", title: "Interactive Card & Art", tags: ["AI Illustration", "Digital Gift"], 
+          id: "ill", title: "Interactive Card & Art", tags: ["React", "GAS", "Digital Gift"], 
           phrase: "心、動かすに。AIと技術で『動くメッセージ』を贈るわな。", color: "bg-pink-100 text-pink-800", delay: "delay-300",
           icon: "fa-solid fa-gift", iconColor: "text-pink-500",
-          detail: "画像1枚で終わらない「体験」をデザインするに。AIで生成した唯一無二のアートに、最新のWeb技術で動きを加え、デジタルギフトや特別なメッセージカードとして昇華させるに。",
+          detail: "画像1枚で終わらない「体験」をデザインするに。最新のWeb技術（React×GAS）とデザインを組み合わせ、デジタルギフトや特別なメッセージカードとして昇華させるに。",
           works: [
             { 
-              title: "【新サービス構想】動くデジタルギフトカード", 
-              desc: "Reactアニメーション×AIイラスト。開いた瞬間に物語が始まる、次世代のメッセージカード。法人向けキャンペーンや、大切な人へのデジタルギフトに。詳細はメッセージで相談してな！"
+              title: "動くデジタルギフトカード（β版デモ）", 
+              desc: "Reactアニメーション×GAS連携。メッセージを入力すると、世界に1つだけの『動くカード』専用の短いURLが発行されるシステムを構築したに。開いた瞬間に物語が始まる次世代のメッセージカードやわ。まずはデモを触ってみてな！",
+              url: "https://tamachamo.github.io/digital_card/", 
+              btnText: "実際にカードを作ってみる" 
             },
             { 
               title: "ぐでにゃん コンセプトアート", 
@@ -134,7 +135,6 @@
 
     const app = document.getElementById('app');
 
-    // 🏠 トップページ描画
     function renderHome() {
       let html = `
         <section class="py-10 md:py-20 text-center animate-fade-in relative">
@@ -173,7 +173,6 @@
       window.scrollTo(0, 0);
     }
 
-    // 📄 詳細ページ描画
     function renderDetail(id) {
       const skill = CONTENT.skills.find(s => s.id === id);
       if (!skill) return;
@@ -243,7 +242,6 @@
       window.scrollTo(0, 0);
     }
 
-    // URLハッシュによる表示切り替え
     window.addEventListener('load', () => {
       const hash = window.location.hash.slice(1);
       if (hash) { renderDetail(hash); } else { renderHome(); }
